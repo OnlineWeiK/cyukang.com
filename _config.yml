@@ -22,7 +22,7 @@ author :
 
 #markdown: rdiscount
 markdown: kramdown
-url: http://cyukang.gitcafe.com
+url: http://cyukang.com
 
 # The production_url is only used when full-domain names are needed
 # such as sitemap.txt
