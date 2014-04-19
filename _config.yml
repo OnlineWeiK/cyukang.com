@@ -3,7 +3,7 @@
 permalink: /:year/:month/:day/:title.html
 
 
-exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md", "*.txt"]
+exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md"]
 
 pygments: true
 

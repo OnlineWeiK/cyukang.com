@@ -47,7 +47,9 @@
 
 
   <div class="span4 sidebar">
+    {% if page.date != nil %}
     <h4 class="date">发布日期：<span>{{ page.date | date_to_long_string }}</span></h4>
+    {% endif %}
     <!-- <p class="meta">By <a href="/about.html" class="author" title="author">Yukang</a><g:plusone size="small"></g:plusone></p> -->
 
     {% unless page.tags == empty %}
