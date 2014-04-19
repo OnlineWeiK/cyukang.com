@@ -16,7 +16,7 @@ tags: [Programming, Bug]
 有一些C语言和开发经验的朋友看看这个[Fix](https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=96db9023b881d7cd9f379b0c154650d6c108e9a3;hp=0d7717fc9c83dafab8153cbd5e2180e6e04cc802)就能了解些具体细节了。
 在网络传输中有一个叫做心跳的概念，简单来讲就是客户端发送一个简单的心跳包给服务端，服务端又返回给客户端，然后客户端检查传回来的内容是否是预期，这样就知道了当前的TLS通信是否正常。这个Bug不是协议的问题，而是具体实现的时候的遗漏了相关的逻辑。
 
-这个函数dtls1_process_heartbeat就是处理这块代码的，先读出长度和包类型，然后申请一段内存空间做一个memcpy，其中长度为pl。而这里遗漏的就是pl这个长度检查是否合法。
+这个函数dtls1_process_heartbeat就是处理这块代码的，先读出长度和包类型，然后申请一段内存空间做一个memcpy，其中长度为write_length, 而这里遗漏的就是这个长度的合法性检查。
 
 {% highlight cpp %}
 /* Read type and payload length first */
