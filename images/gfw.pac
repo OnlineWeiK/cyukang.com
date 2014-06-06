@@ -2450,7 +2450,7 @@ var domains = {
   "lookatgame.com": 1,
   "darpa.mil": 1,
   "wtfpeople.com": 1,
-  "1-apple.com.tw": 1
+  "1-apple.com.tw": 1,
   "ntdtv.com": 1
 };
 
