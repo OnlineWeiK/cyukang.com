@@ -2450,7 +2450,8 @@ var domains = {
   "darpa.mil": 1,
   "wtfpeople.com": 1,
   "1-apple.com.tw": 1,
-  "ntdtv.com": 1
+  "ntdtv.com": 1,
+  "gmail.com": 1
 };
 
 var proxy = "SOCKS 127.0.0.1:1314; DIRECT;";
