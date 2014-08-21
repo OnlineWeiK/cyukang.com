@@ -14,4 +14,4 @@ config.yml里面的内容请改掉。
 
 links页面改掉，
 
-about页面Weibo，Email相关信息也别忘记改掉！
+About页面Weibo，Email相关信息也别忘记改掉！
