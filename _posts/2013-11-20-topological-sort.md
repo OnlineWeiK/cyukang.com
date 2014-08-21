@@ -23,30 +23,79 @@ tags: [Algorithms]
 拓扑排序的基本算法是用DFS，我们希望把有出度的点尽量排在前面，所以这里需要注意和DFS的区别。比如上面图中的一个DFS访问顺序是: 5 2 3 1 0 4, 但是这不是一个拓扑排序，4需要排在0的前面，5, 4, 0, 2, 3, 1。
 拓扑排序中需要等迭代完节点的连接邻点后再把当前点压入栈。
 
-
 {% highlight cpp %}
 
-void Graph::_topological(int v, bool visited[], stack<int>& stack) {
-    visited[v] = true;
-    for(list<struct Edge>::iterator it = adj[v].begin();
-		it != adj[v].end(); ++it) {
-	int u = it->v;
-	if(visited[u] == false)
-		_topological(u, visited, stack);
-	}
-	stack.push(v);
+#include <iostream>
+#include <stdio.h>
+#include <list>
+#include <stack>
+
+using namespace std;
+
+class Graph {
+    int V;
+    list<int>* adj;
+    void _topological_sort(int v, bool visited[], stack<int>& stack);
+public:
+    Graph(int v);
+    ~Graph();
+    void addEdge(int v, int w);
+    void Topological_sort();
+};
+
+Graph::Graph(int v):V(v) {
+    adj = new list<int>[V];
 }
 
-void Graph::TopologicalSort(stack<int>& stack) {
+Graph::~Graph() {
+    delete [] adj;
+}
+
+void Graph::addEdge(int v, int w) {
+    adj[v].push_back(w);
+}
+
+void Graph::_topological_sort(int v, bool visited[], stack<int>& stack) {
+    visited[v] = true;
+    for(list<int>::iterator it = adj[v].begin(); it != adj[v].end(); ++it) {
+        int u = *it;
+        if(visited[u] == false)
+            _topological_sort(u, visited, stack);
+    }
+    stack.push(v);
+}
+
+void Graph::Topological_sort() {
     bool visited[V];
+    stack<int> stack;
     for(int i=0; i<V; i++)
         visited[i] = false;
-    for(int i=0; i<V; i++) {
+    for(int i=V-1; i>=0; i--) {
         if(visited[i] == false) {
-            _topological(i, visited, stack);
+            _topological_sort(i, visited, stack);
         }
     }
+    while(!stack.empty()) {
+        int v = stack.top();
+        stack.pop();
+        std::cout << " " << v << " ";
+    }
+    std::cout << std::endl;
 }
+
+int main() {
+    Graph g(6);
+    g.addEdge(5, 2);
+    g.addEdge(5, 0);
+    g.addEdge(4, 0);
+    g.addEdge(4, 1);
+    g.addEdge(2, 3);
+    g.addEdge(3, 1);
+    cout << "Following is topological sort result: \n";
+    g.Topological_sort();
+    return 0;
+}
+
 
 {% endhighlight %}
 
@@ -56,6 +105,7 @@ void Graph::TopologicalSort(stack<int>& stack) {
 ## 其他图算法的预处理
 
 - DAG的强连通分支问题
- 先得到拓扑排序，形成逆向图(所有边与原来方向相反)，然后根据拓扑排序依次再进行DFS。
+先得到拓扑排序，形成逆向图(所有边与原来方向相反)，然后根据拓扑排序依次再进行DFS。
 
 - DAG的最短路径问题，这可以在O(V+E)复杂度解决最短路径问题。同样类似的算法适用与DAG的最长路径问题，给定一个点求DAG中的各个点与给定点之间的最长路径。最长路径问题要比最短路径问题难，因为最长路径问题没有最优子结构，[对于通用的图的最长路径算法还是NP难的问题](http://en.wikipedia.org/wiki/Longest_path_problem)。
+
