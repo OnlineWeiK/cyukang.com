@@ -28,6 +28,6 @@ The problem annoying me is that if the size of buffer for eshell is too big, Ema
 
 {% endhighlight %}
 
-clear-and-send-input is a wrapper for eshell-send-input, I set the maximal number of eshell buffer to 800, and I bind this function to <return>, so every time if the buffer size is too big, this wrappe will automatically clean up the buffer.
+clear-and-send-input is a wrapper for eshell-send-input, I set the maximal number of eshell buffer to 800, and I bind this function to <return>, so every time if the buffer size is too big, this wrapper will automatically clean up the buffer.
 
 And yesterday I found this article [Mastering Emacs in one year guide](https://github.com/redguardtoo/mastering-emacs-in-one-year-guide)is really thought-provoking, Hope this may help you.
