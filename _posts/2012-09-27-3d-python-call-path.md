@@ -2,7 +2,7 @@
 layout: post
 title: "UbiGraph动态显示Python函数调用"
 description: ""
-category: 
+category:
 tags: [Python, Ubigraph]
 ---
 {% include JB/setup %}
@@ -17,15 +17,15 @@ U = ubigraph.Ubigraph()
 U.clear()
 
 x = U.newVertex(shape="sphere", color="#ffff00")
-  
+
 smallRed = U.newVertexStyle(shape="sphere", color="#ff0000", size="0.2")
-  
+
 previous_r = None
 for i in range(0,10):
   r = U.newVertex(style=smallRed, label=str(i))
   U.newEdge(x,r,arrow=True)
   if previous_r != None:
-    U.newEdge(r,previous_r,spline=True,stroke="dashed")  
+    U.newEdge(r,previous_r,spline=True,stroke="dashed")
   previous_r = r
 
 </pre>
@@ -37,16 +37,16 @@ for i in range(0,10):
 
 ## 使用Ubigraph显示Python函数调用
 
-这是在[这里](http://pyevolve.sourceforge.net/wordpress/?p=210)看到的，貌似需要翻墙。代码比较简单，在点击查看[prof3d.py](images/prof3d.py)。
+这是在[这里](http://pyevolve.sourceforge.net/wordpress/?p=210)看到的，貌似需要翻墙。代码比较简单，在点击查看[prof3d.py](http://cyukang.com/images/prof3d.py)。
 
 使用方法是先启动Ubigraph的server，然后运行下面的代码：
 
 <pre class="prettyprint lang-python">
 import prof3d
- 
+
 def run_main():
    # your code
- 
+
 if __name__ == "__main__":
    prof3d.profile_me()
    run_main()
@@ -56,6 +56,3 @@ if __name__ == "__main__":
 
 效果如下：
 <img src="/images/python_call.png" alt="ubigraph_python" class="img-center"/>
-
-
-
