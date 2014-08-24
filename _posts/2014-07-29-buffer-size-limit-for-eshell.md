@@ -13,7 +13,7 @@ I will always run eshell for shell tasks, because this is really like the normal
 
 The problem annoying me is that if the size of buffer for eshell is too big, Emacs will gets more and more slow. Emacs essentially is a sole process program. So I have some digg and written a trivial elisp code like this solved the problem.
 
-{% highlight ruby %}
+{% highlight lisp %}
 (defun clear-and-send-input()
   (interactive)
   (if (> (count-lines 1 (point)) 800)
