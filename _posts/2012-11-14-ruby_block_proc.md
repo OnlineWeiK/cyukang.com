@@ -2,14 +2,14 @@
 layout: post
 title: "Ruby's Block and Proc"
 description: ""
-category: 
+category:
 tags: [Ruby, Programming]
 ---
 {% include JB/setup %}
 
 ### Callable objects
 
-在Ruby当中一切都是对象，但是有一个例外，那就是block。Block和Proc类似，但是还是有稍有差别的，Block。最近在看《Metaprogramming Ruby》，在这节中有个例子是这样的。
+在Ruby当中一切都是对象，但是有一个例外，那就是block。Block和Proc类似，但是还是有稍有差别的，Block更常用一些。最近在看《Metaprogramming Ruby》，在这节中有个例子是这样的。
 
 <pre class="prettyprint ruby">
 require 'highline'
@@ -37,7 +37,7 @@ new_pass = hl.ask("password: ") { |prompt| prompt.echo = false }
       # initialize instance data
       @question    = question
       @answer_type = answer_type
-      
+
       # allow block to override settings
       yield self if block_given?
 </pre>
