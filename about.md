@@ -15,7 +15,7 @@ group: meta
 
  内容多为算法和程序设计、Linux、
 
- 编程语言C/C++、Go、Ruby/Python/Scheme等技术相关的内容。
+ 编程语言C/C++、Go、Rust/Ruby/Python/Scheme等技术相关的内容。
 
  如果刚好你对我写的东西感兴趣，可以订阅我的[RSS](atom.xml)，我会保持全文输出。
 
