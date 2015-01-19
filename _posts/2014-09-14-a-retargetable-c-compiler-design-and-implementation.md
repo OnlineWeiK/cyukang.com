@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "lcc阅读随手记录"
+title: "lcc阅读记录"
 description: ""
 category:
 tags: [Programming, Compiler]
