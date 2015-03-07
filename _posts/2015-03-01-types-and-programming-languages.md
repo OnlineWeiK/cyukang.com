@@ -16,7 +16,7 @@ tags: [PL, Ocaml, Programming]
 arith是一个无类型的解释器，是后面所有章节的基础。printtm_Term用了Format模块来格式化打印。
 
 ## The Untyped Lambda-Calculus
-浅显易懂的Lambda-Calculus解释，同时列举了一些lambda calculus扩展其他语言部分。
+浅显易懂的Lambda-Calculus解释，同时列举了一些lambda calculus扩展其他语言部分的例子。
 
 ## An ML Implementation of the Lambda-Calculus
 
