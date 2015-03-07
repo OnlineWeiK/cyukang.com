@@ -3,7 +3,7 @@ layout: post
 title: "Types and Programming Languages (2)"
 description: ""
 category:
-tags: []
+tags: [PL, Ocaml, Programming]
 ---
 {% include JB/setup %}
 
