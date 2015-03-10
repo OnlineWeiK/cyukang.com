@@ -38,14 +38,14 @@ Store typings: 引入引用后类型系统需要处理Cyclic reference structure
 实现fullref： 引用部分的实现非常简单，
 
 {% highlight ocaml %}
-  | TmRef(fi,t1) ->
-      TyRef(typeof ctx t1)
-  | TmLoc(fi,l) ->
-      error fi "locations are not supposed to occur in source programs!"
-  | TmDeref(fi,t1) ->
-      (match simplifyty ctx (typeof ctx t1) with
-          TyRef(tyT1) -> tyT1
-        | TyBot -> TyBot
-        | TySource(tyT1) -> tyT1
-        | _ -> error fi "argument of ! is not a Ref or Source")
+| TmRef(fi,t1) ->
+    TyRef(typeof ctx t1)
+| TmLoc(fi,l) ->
+    error fi "locations are not supposed to occur in source programs!"
+| TmDeref(fi,t1) ->
+    (match simplifyty ctx (typeof ctx t1) with
+        TyRef(tyT1) -> tyT1
+      | TyBot -> TyBot
+      | TySource(tyT1) -> tyT1
+      | _ -> error fi "argument of ! is not a Ref or Source")
 {% endhighlight %}
