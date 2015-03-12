@@ -60,3 +60,24 @@ and meet ctx tyS tyT =
   .......
 
 {% endhighlight %}
+
+## Case Study: Imperative Objects
+
+不考虑实现效率和语法简洁的条件下，目前为止学到的语言特性已经足够来模拟实现OOP。最简单的例子就是一个counter:
+
+{% highlight ocaml %}
+c = let x = ref 1 in
+    {get = λ_:Unit. !x,
+    inc = λ_:Unit. x:=succ(!x)};
+{% endhighlight %}
+
+OOP作为一种抽象手段，可以让通过接口来隐藏实现，客户端的代码只通过同一个接口才操作各种子类的对象。这里的例子一个子类只是比父类多接口而已。
+
+{% highlight ocaml %}
+newResetCounter =
+    λ_:Unit. let x = ref 1 in
+    {get = λ_:Unit. !x,
+    inc = λ_:Unit. x:=succ(!x), reset = λ_:Unit. x:=1};
+{% endhighlight %}
+
+self的简单是现实需要动态找到对应的method，更高效的实现当然是对象创建好后method table建好。
