@@ -3,7 +3,7 @@ layout: post
 title: "惰性求值和流"
 description: ""
 category:
-tags: [PL, Ocaml, Programming]
+tags: [PL, OCaml, Programming]
 ---
 {% include JB/setup %}
 
