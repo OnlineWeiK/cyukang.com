@@ -24,6 +24,6 @@ group: meta
  * [HackerRank](http://www.hackerrank.com) 另外一个OJ，类型丰富，难度适中
  * [Rust-lang](http://rust-lang.org) Rust-lang!
  * [Ruby-china](http://www.ruby-china.org)
- * [Reddit-programming](http://www.reddit/r/programming)
+ * [Reddit-programming](http://www.reddit.com/r/programming)
 
 --------------------------------
