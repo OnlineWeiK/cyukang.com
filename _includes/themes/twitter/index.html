@@ -9,12 +9,10 @@
     <ul class="pager">
       <li class="next"><a href="{{ BASE_PATH }}/archive.html" title="所有文章">查看所有文章 &rarr;</a></li>
     </ul>
-
   </div>
 
 
   <div class="span4 sidebar">
-
     <h4 class="date">发布日期：<span>{{ latest_post.date | date_to_long_string }}</span></h4>
     {% unless latest_post.tags == empty %}
     <h4>标签</h4>
