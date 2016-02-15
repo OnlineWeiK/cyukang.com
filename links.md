@@ -25,6 +25,6 @@ group: meta
  * [Rust-lang](http://rust-lang.org) Rust-lang!
  * [Ruby-china](http://www.ruby-china.org)
  * [Reddit-programming](http://www.reddit.com/r/programming)
-
+ * [Rails conding style](http://stylesror.github.io/)
 
 --------------------------------
